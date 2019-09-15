@@ -12,10 +12,10 @@ from . import models
 from django.shortcuts import render,redirect
 import datetime
 
-
 def registerfacVehicle(request):
     if request.method == 'POST':
         obj = fac()
+        print("jhgbu")
         obj.name = request.POST["name"]
         obj.vehicle_no = request.POST["vehicle_no"]
         obj.vehicle_type = request.POST["type"]
@@ -31,8 +31,9 @@ def registerfacVehicle(request):
 def veh(request):
 
     try:
-         obj = fac.objects.filter(vehicle_no=request.POST["vehno"])[0]
+         obj = fac.objects.get(vehicle_no=request.POST["vehno"])
          return render(request,'register/register_base.html',{"obj":obj})
+         # return render('/register')
         # return redirect('/')
         #fac.objects.filter(vehicle_no=request.POST["vehno"])
         #   return redirect('/register')
