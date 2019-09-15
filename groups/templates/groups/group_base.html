@@ -6,7 +6,45 @@
     {% block pregroup %}{% endblock %}
     {% block group_content %}{% endblock %}
     {% block postgroup %}{% endblock %}
-  </div>
-</div>
+<br>
 
+      <center><H1 style="color:#ff884d; font-family:verdana;font-size:250%;">Guest Login:</H1></center>
+
+    <br><br>
+<br><br>
+    <div class="container">
+    <center>
+    <form method="POST" >
+      {% csrf_token %}
+      <p style="color:#008080; font-family:courier;font-size:160%;">Name:
+    <input type="text" name="name"></p><br>
+    <!-- </form> -->
+    </center>
+    <center>
+    <br><br>
+    <!-- <form> -->
+    <p style="color:#008080; font-family:courier;font-size:160%;">Vehicle No.:
+    <input type="text" name="vehicle_no"></p>
+    <!-- </form> -->
+    </center>
+    <center>
+    <br><br>
+    <p style="color:#008080; font-family:courier;font-size:160%;">Vehicle Type:
+      <select name="type"><br><br>
+      <option value="Car">Car</option><br><br>
+      <option value="Bike">Bike</option><br><br>
+      <option value="Scooter">Scooter</option>
+      <br><br>
+      <option value="Tempo">Tempo</option>
+    </select></p>
+    <br><br>
+    <center>
+      <p style="color:#008080; font-family:courier;font-size:160%;">Purpose:
+      <input type="Text" name="purpose"></p>
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+</div>
+    </center></div>
+</div>
 {% endblock %}
