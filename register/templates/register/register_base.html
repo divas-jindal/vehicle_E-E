@@ -16,20 +16,20 @@
    <form method="POST">
      {% csrf_token %}
      <p style="color:#008080; font-family:courier;font-size:160%;">Name:
-   <input type="text" name="name"></p><br>
+   <input type="text" name="name" value="{{obj.name}}"></p><br>
    <!-- </form> -->
    </center>
    <center>
    <br>
    <!-- <form> -->
    <p style="color:#008080; font-family:courier;font-size:160%;">Vehicle No.:
-   <input type="text" name="vehicle_no"></p>
+   <input type="text" name="vehicle_no" value="{{obj.vehicle_no}}"></p>
    <!-- </form> -->
    </center>
    <center>
    <br><br>
    <p style="color:#008080; font-family:courier;font-size:160%;">Vehicle Type:
-     <select name="type"><br><br>
+     <select name="type" value="{{obj.type}}"><br><br>
      <option value="Car">Car</option><br><br>
      <option value="Bike">Bike</option><br><br>
      <option value="Scooter">Scooter</option>
@@ -39,11 +39,19 @@
    <br><br>
    <center>
      <p style="color:#008080; font-family:courier;font-size:160%;">Designation :
-       <select name="type"><br><br>
-       <option value="Car">Faculty</option><br><br>
-       <option value="Bike">Student</option><br><br>
-       <option value="Scooter">Worker</option>
+       <select name="des" value="{{obj.des}}"><br><br>
+       <option value="Fac">Faculty</option><br><br>
+       <option value="Student">Student</option><br><br>
+       <option value="Worker">Worker</option>
      </select></p>
+
+     <br><br>
+     <center>
+       <p style="color:#008080; font-family:courier;font-size:160%;">Entry/Exit :
+         <select name="in_out"><br><br>
+         <option value="in">Entry</option><br><br>
+         <option value="out">Exit</option><br><br>
+       </select></p>
      <br><br><button type="submit" class="btn btn-primary">Submit</button>
    </form>
    	</div>

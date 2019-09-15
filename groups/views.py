@@ -10,7 +10,7 @@ from django.views import generic
 from groups.models import Guest
 from . import models
 from django.shortcuts import render,redirect
-
+import datetime
 
 
 def registerVehicle(request):
@@ -20,6 +20,10 @@ def registerVehicle(request):
         obj.vehicle_no = request.POST["vehicle_no"]
         obj.vehicle_type = request.POST["type"]
         obj.purpose = request.POST["purpose"]
+        obj.in_out= request.POST["in_out"]
+        time = datetime.datetime.now()
+        obj.time = time
+
         obj.save()
         return redirect('/')
     return render(request,'groups/group_base.html')

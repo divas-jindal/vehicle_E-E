@@ -10,7 +10,7 @@ from django.views import generic
 from register.models import fac
 from . import models
 from django.shortcuts import render,redirect
-
+import datetime
 
 
 def registerfacVehicle(request):
@@ -20,13 +20,19 @@ def registerfacVehicle(request):
         obj.vehicle_no = request.POST["vehicle_no"]
         obj.vehicle_type = request.POST["type"]
         obj.des = request.POST["des"]
+        obj.in_out= request.POST["in_out"]
+        time = datetime.datetime.now()
+        obj.time= time
         obj.save()
         return redirect('/')
     return render(request,'register/register_base.html')
 
 def veh(request):
     try:
-        fac.objects.get(vehicle_no=request.POST["vehno"])
-        return redirect('/register')
+         obj = fac.objects.get(vehicle_no=request.POST["vehno"])
+         return render(request,'register/register_base.html',{"obj":obj})
+        # return redirect('/')
+        #fac.objects.filter(vehicle_no=request.POST["vehno"])
+        #   return redirect('/register')
     except:
         return redirect('/groups')
