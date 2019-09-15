@@ -23,13 +23,15 @@ def registerfacVehicle(request):
         obj.in_out= request.POST["in_out"]
         time = datetime.datetime.now()
         obj.time= time
+        print("jhgbu")
         obj.save()
         return redirect('/')
     return render(request,'register/register_base.html')
 
 def veh(request):
+
     try:
-         obj = fac.objects.get(vehicle_no=request.POST["vehno"]) 
+         obj = fac.objects.filter(vehicle_no=request.POST["vehno"])[0]
          return render(request,'register/register_base.html',{"obj":obj})
         # return redirect('/')
         #fac.objects.filter(vehicle_no=request.POST["vehno"])
