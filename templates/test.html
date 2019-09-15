@@ -9,21 +9,22 @@
   </center>
   <center>
   <br><br><br>
-  <form>
+  <form method="POST" action="/register/veh/">
+    {% csrf_token %}
     <p style="color:#008080; font-family:courier;font-size:160%;">Vehicle No.:
-    <input type="text" ="Vehicle No.">
-  </form>
+    <input type="text" ="Vehicle No." name="vehno">
+  <!-- </form> -->
   </center></p>
   <br><br><br>
   <center>
-  <form>
+  <!-- <form> -->
     <p style="color:#008080; font-family:courier;font-size:160%;">Name:
-    <input type="text" ="Name">
-  </form>
+    <input type="text" ="Name" name="blaaa">
+  <!-- </form> -->
   </center></p>
   <br><br><br>
   <center>
-  <form>
+  <!-- <form> -->
   <input type="submit" value="Submit">
   </form>
   </center>

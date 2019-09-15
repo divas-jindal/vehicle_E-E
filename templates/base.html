@@ -28,6 +28,7 @@
         </div>
         <div class="navbar-nav ml-auto">
           {% if user.is_authenticated %}
+          <a class="nav-item nav-link" href="{% url 'register:all' %}" class="btn btn-simple">REGISTERED VEHICLE</a>
 
             <a class="nav-item nav-link" href="{% url 'groups:all' %}" class="btn btn-simple">GUEST</a>
             <a class="nav-item nav-link" href="{% url 'accounts:logout' %}" class="btn btn-simple">Log out</a>
