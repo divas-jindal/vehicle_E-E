@@ -29,7 +29,7 @@ def registerfacVehicle(request):
 
 def veh(request):
     try:
-         obj = fac.objects.get(vehicle_no=request.POST["vehno"])
+         obj = fac.objects.get(vehicle_no=request.POST["vehno"]) 
          return render(request,'register/register_base.html',{"obj":obj})
         # return redirect('/')
         #fac.objects.filter(vehicle_no=request.POST["vehno"])
